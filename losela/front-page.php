@@ -3,187 +3,133 @@
 
 <!-- Content Begins Here -->
 <!-- Main Content Section Begins Here -->
-			<div class="coverOne bg-cover">
-				<div class="container">
-					<div class="row"> 
-						<div id="1" class="col-xs-12 text-center center-block"><div class="margin-bottom-xxl"></div>
-							<section>
-								<div class="col-xs-12">
-									<h1 class="text-xxl lobster">I am aLeksandar</h1>
-								</div>
-								<div class="col-xs-12">
-									<div class="margin-bottom-xxl"></div>
-								</div>
-								<div class="col-xs-12">
-									<div class="col-xs-12 col-sm-4"><div class="ctrl-w rounded wow zoomIn" data-wow-duration="2s" data-wow-delay="0s"">
-									<i class="flaticon-astronomy6"></i></div><h4 class="text-md text-center playfair">Philosopher.</h4>
+<section><!-- Start of First Section -->
+	<?php	$abt_args = array('pagename' => 'about');
+			$p = new WP_Query($abt_args);
+		?>
+	<div class="container-fluid nopadding">
+		<div class="row-fluid"><div class="margin-bottom-xxl"></div>
+			<div id="1" class="col-xs-12 nopadding b-tb well">
+				<div class="row-fluid"><!-- Start of First Content Section -->
+					<?php if ( $p->have_posts() ) : while ( $p->have_posts() ) : $p->the_post(); ?>
+					<div class="col-sm-8 vcenter nopadding">
+						<div class="row-fluid">
+							<div class="col-xs-12 text-center">
+								<div class="row">
+									<div class="col-xs-12">
+										<a href="index.php/about">
+											<h1>
+												<?php echo get_post_meta(get_the_ID(),'Post Title', true); ?>
+												<div class="margin-bottom-sm"></div>
+											</h1>
+										</a>
 									</div>
-									<div class="col-xs-12 col-sm-4"><div class="ctrl-w rounded wow zoomIn" data-wow-duration="2s" data-wow-delay="0s"">
-									<i class="flaticon-theatre2"></i></div><h4 class="text-md text-center playfair">Artist.</h4>
+									<div class="col-xs-12 col-sm-4"><a href="index.php/about#philosopher"><div class="ctrl-w rounded wow zoomIn" data-wow-duration="2s" data-wow-delay="0.2s">
+									<i class="flaticon-astronomy6"></i></div><h4 class="text-md text-center playfair">Philosopher.</h4></a>
 									</div>
-									<div class="col-xs-12 col-sm-4"><div class="ctrl-w rounded wow zoomIn" data-wow-duration="2s" data-wow-delay="0s"">
-									<i class="flaticon-computerscreen47"></i></div><h4 class="text-md text-center playfair">Developer.</h4>
+									<div class="col-xs-12 col-sm-4"><a href="index.php/about#artist"><div class="ctrl-w rounded wow zoomIn" data-wow-duration="2s" data-wow-delay="0.2s">
+									<i class="flaticon-theatre2"></i></div><h4 class="text-md text-center playfair">Artist.</h4></a>
 									</div>
+									<div class="col-xs-12 col-sm-4"><a href="index.php/about#developer"><div class="ctrl-w rounded wow zoomIn" data-wow-duration="2s" data-wow-delay="0.2s">
+									<i class="flaticon-computerscreen47"></i></div><h4 class="text-md text-center playfair">Developer.</h4></a>
+									</div>
+									<div class="col-xs-12"><a href="index.php/portfolio"><h3 class="btn btn-xs btn-primary outline">VIEW PORTFOLIO</h3></a><div class="margin-bottom-sm"></div></div>
 								</div>
-								<div class="col-xs-12"><div class="margin-bottom-xxl"></div>
-									<a href="#2" class=""><div class="wow bounceInDown" data-wow-duration="1s" data-wow-delay="0s">
-									<i class="icon-circle-down" style="font-size:48px;"></i></div>
-									</a>
-								</div>
-							</section>
+							</div>
 						</div>
 					</div>
-				</div>
-			</div>
-			
-			<div class="coverTwo bg-cover">
-				<div class="container">
-					<div class="row"> 
-						<div id="2" class="col-xs-12 text-center"><div class="margin-bottom-xxl"></div>
-							<section>
-								<div class="col-xs-12">
-									<h3 class="text-xxl lobster">I tackle challenges</h3>
-								</div>
-								<div class="col-xs-12">
-									<div class="margin-bottom-lg"></div>
-								</div>
-								<div class="col-xs-12">
-									<p class="text-lg">by exploring new ideas from different angles</p>
-								</div>
-								<div class="col-xs-12">
-									<a href="#3" class="">
-									<i class="icon-circle-down" style="font-size:48px;"></i>
-									</a>
-								</div>
-							</section>
-						</div>
+					
+					<div class="col-sm-4 vcenter nopadding">
+						<?php if(has_post_thumbnail()){the_post_thumbnail('',
+							array('class' => "img-responsive center-block rounded-corners-left-half wow zoomIn"));}
+								
+							?>
 					</div>
-				</div>
+					<?php endwhile; else : ?>
+						<p><?php _e( 'Sorry, no posts matched your criteria.' ); ?></p>
+					<?php endif; ?>
+					<?php wp_reset_postdata();?>
+				</div><!-- End of First Content Section -->
 			</div>
-			
-			<div class="coverThree bg-cover">
-				<div class="container">
-					<div class="row"> 
-						<div id="3" class="col-xs-12 text-center"><div class="margin-bottom-xxl"></div>
-							<section>
-								<div class="col-xs-12">
-									<h3 class="text-xxl lobster">and applying technology</h3>
-								</div>
-								<div class="col-xs-12">
-									<div class="margin-bottom-lg"></div>
-								</div>
-								<div class="col-xs-12">
-									<p class="text-lg">to find alternate solutions</p>
-								</div>
-								<div class="col-xs-12">
-									<a href="#4" class="">
-									<i class="icon-circle-down" style="font-size:48px;"></i>
-									</a>
-								</div>
-							</section>
-						</div>
+				<div class="col-xs-12 text-center"><div class="margin-bottom-sm"></div>
+					<a href="#2" class=""><div class="wow bounceInDown" data-wow-duration="3s" data-wow-delay="0.2s">
+					<i class="icon-circle-down" style="font-size:48px;"></i></div>
+					</a>
+				</div>
+		</div>
+	</div>
+</section><!-- End of First Section -->
+
+<section><!-- Start of Second Section -->
+	<?php $cp_args = array(
+			'meta_query'	=>	array(
+			array(
+			'key' => 'Current Project',
+			'value' => 'Yes'
+			)
+				),
+			'post_type'		=> array('post', 'page')
+			);
+			$cp = new WP_Query($cp_args); 
+		?>
+	<div class="container nopadding">
+		<div class="row">
+			<div id="2" class="col-xs-12 nopadding"><div class="margin-bottom-xxl"></div>
+				<div class="row"><!-- Start of Second.a Content Section -->
+					<div class="col-xs-12 text-center">
+						<h3>~Current Projects~</h3>
 					</div>
-				</div>
-			</div>
-			
-			<div class="coverFour bg-cover">
-				<div class="container">
-					<div class="row"> 
-						<div id="4" class="col-xs-12 text-center"><div class="margin-bottom-xxl"></div>
-							<section>
-								<div class="col-xs-12">
-									<h3 class="text-xxl lobster">while sharing knowledge</h3>
-								</div>
-								<div class="col-xs-12">
-									<div class="margin-bottom-lg"></div>
-								</div>
-								<div class="col-xs-12">
-									<p class="text-lg">and learning with others</p>
-								</div>
-								<div class="col-xs-12">
-									<a href="#5" class="">
-									<i class="icon-circle-down" style="font-size:48px;"></i>
-									</a>
-								</div>
-							</section>
+					<div class="row">
+					<?php if ( $cp->have_posts() ) : while ( $cp->have_posts() ) : $cp->the_post(); ?>
+						<div class="col-xs-12 col-sm-4 p-t p-b text-center">
+							<a class="hhs" href="<?php the_permalink();?>">
+								<figure>
+									<?php if(has_post_thumbnail()){the_post_thumbnail('',
+										array('class' => "hhs-img img-responsive center-block wow zoomIn"));}
+									?>
+										<figcaption>
+											<div class="btn btn-xs btn-primary outline"><?php the_title('<span>','</span>');?><span><?php the_excerpt(); ?></span>Learn More&nbsp;<i class="icon-circle-right"></i></div>
+										</figcaption>
+								</figure>
+							</a>
 						</div>
+					<?php endwhile; else : ?>
+						<p><?php _e( 'Currently I am not working on any projects...' ); ?></p>
+					<?php endif; ?>
 					</div>
-				</div>
-			</div>
-			
-			<div class="coverFive bg-cover">
-				<div class="container">
-					<div class="row"> 
-						<div id="5" class="col-xs-12 text-center"><div class="margin-bottom-xxl"></div>
-							<section>
-								<div class="col-xs-12">
-									<h3 class="text-xxl lobster">to overcome boundaries</h3>
-								</div>
-								<div class="col-xs-12">
-									<div class="margin-bottom-lg"></div>
-								</div>
-								<div class="col-xs-12">
-									<p class="text-lg">and leave behind a better world.</p>
-								</div>
-								<div class="col-xs-12">
-									<a href="#6" class="">
-									<i class="icon-circle-down" style="font-size:48px;"></i>
-									</a>
-								</div>
-							</section>
+					<?php wp_reset_postdata();?>
+				</div><!-- End of Second Content.a Section -->
+				
+				<div class="row"><!-- Start of Second.b Content Section -->
+					<div class="col-xs-12 text-center">
+						<h3>~Must Read Tutorials~</h3>
+					</div>
+					<div class="row">
+					<?php 	$tut_args = array( 'meta_query'	=>	array(array('key' => 'Tutorial Series First',)),'post_type'		=> array('post', 'page'));
+							$tut = new WP_Query($tut_args); ?>
+						<?php if ( $tut->have_posts() ) : while ( $tut->have_posts() ) : $tut->the_post(); ?>
+						<div class="col-xs-12 col-sm-4 p-t p-b text-center">
+							<a class="hhs" href="<?php the_permalink();?>">
+								<figure>
+									<?php if(has_post_thumbnail()){the_post_thumbnail('',
+										array('class' => "hhs-img img-responsive center-block wow zoomIn"));}
+									?>
+										<figcaption>
+											<div class="btn btn-xs btn-primary outline"><?php the_title('<span>','</span>');?><span><?php the_excerpt(); ?></span>Learn More&nbsp;<i class="icon-circle-right"></i></div>
+										</figcaption>
+								</figure>
+							</a>
 						</div>
+					<?php endwhile; else : ?>
+						<p><?php _e( 'Seems like I have not written any tutorials yet...' ); ?></p>
+					<?php endif; ?>
 					</div>
-				</div>
+					<?php wp_reset_postdata();?>
+				</div><!-- End of Second Content.b Section -->
 			</div>
-			
-			<div class="coverSix bg-cover">
-				<div class="container">
-					<div class="row"> 
-						<div id="6" class="col-xs-12 text-center"><div class="margin-bottom-xxl"></div>
-							<section>
-								<div class="col-xs-12">
-									<h3 class="text-xxl lobster">I am aLeksandar</h3>
-								</div>
-								<div class="col-xs-12">
-									<p class="text-lg">the missing piece.</p>
-								</div>
-								<div class="col-xs-12">
-									<div class="margin-bottom-lg"></div>
-								</div>
-								<div class="col-xs-12">
-									<a href="#7" class="">
-									<i class="icon-circle-down" style="font-size:48px;"></i>
-									<p>Get In Touch</p>
-									</a>
-								</div>
-							</section>
-						</div>
-					</div>
-				</div>
-			</div>
-			
-			<div class="coverSeven bg-cover">
-				<div class="container">
-					<div class="row"> 
-						<div id="7" class="col-xs-12 text-center"><div class="margin-bottom-xxl"></div>
-							<section>
-								<div class="col-xs-12">
-									<div class="margin-bottom-lg"></div>
-								</div>
-								<div class="col-xs-12">
-									<div class="well"><?php echo do_shortcode( '[contact-form-7 id="4" title="get @ aleksandar.solutions"]' ); ?></div>
-								</div>
-								<div class="col-xs-12"><div class="margin-bottom-xxl"></div>
-								<div class="col-xs-12">
-									<a href="#1" class="">
-									<i class="icon-circle-up" style="font-size:48px;"></i>
-									</a>
-								</div>
-							</section>
-						</div>
-					</div>
-				</div>
-			</div>
+		</div>
+	</div>
+</section><!-- End of Second Section -->
 <!-- Main Content Section Ends Here -->
 <!-- Content Ends Here -->
 <!-- Footer Begins Here -->
