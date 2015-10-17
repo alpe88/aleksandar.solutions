@@ -38,33 +38,24 @@
    	<script src="<?php bloginfo('template_directory');?>/js/bootstrap.min.js"></script>
 	<!-- Material Design
    	<script src="<?php bloginfo('template_directory');?>/md/js/ripples.min.js"></script>
-	<script src="<?php bloginfo('template_directory');?>/md/js/material.min.js"></script> -->
+	<script src="<?php bloginfo('template_directory');?>/md/js/material.min.js"></script>-->
 	<!-- Animation -->
 	<script src="<?php bloginfo('template_directory');?>/js/wow.min.js"></script>
-	<!-- Smooth Scrolling-->
+	<!-- Smooth Scrolling -->
 	<script src="<?php bloginfo('template_directory');?>/js/navbar-scroll.js"></script>
 	<script src="<?php bloginfo('template_directory');?>/js/smooth-scroll.js"></script>							
 	<!-- Twitter Fetcher
 	<script src="<?php bloginfo('template_directory');?>/tw/tf.min.js"></script> -->
+	<!-- Flexslider -->
+	<script src="<?php bloginfo('template_directory');?>/flexslider/jquery.flexslider-min.js"></script>
   	<script type="text/javascript">
 		$(document).ready(function() {
 			new WOW().init();
-			var cc = 1
-				$('#search-button').click(function(e){
-					$('input[type="text"]#s').focus();
-					var input = $('input[type="text"]#s').val().length;console.log(input);
-					if(input <= 0){
-						e.preventDefault();
-					}else{
-						if(cc%2==0){//even
-							return true;
-						}
-						if(cc%2==1){//odd
-							e.preventDefault();
-						}
-						cc++;	
-					}
-				});
+			$('.flexslider').flexslider({
+				animation: "slide",
+				controlNav: false,
+				directionNav: false
+			});
 		});	
 	</script>
 <?php wp_footer(); ?>

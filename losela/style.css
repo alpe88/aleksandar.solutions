@@ -119,46 +119,17 @@ ul{list-style-type: none;}
 .vcenter {float:none!important;display:inline-block!important;vertical-align:middle!important;margin-right:-4px!important;}
 .fade-xs{opacity:0.7;}
 .fade-sm{opacity:0.9;}
+.rounded-corners-left-half{ border-bottom-left-radius: 5em;border-top-left-radius:5em;}
 /*Button Extras*/
 .btn.outline {background: none;padding: 12px 22px;}
 .btn-primary.outline {border: 2px solid #000000;color: #000000;}
 .btn-primary.outline:hover, .btn-primary.outline:focus, .btn-primary.outline:active, .btn-primary.outline.active, .open > .dropdown-toggle.btn-primary {color: #ffffff;border-color: #ffffff;}
 .btn-primary.outline:active, .btn-primary.outline.active {border-color: #ffffff;color: #ffffff;box-shadow: none;}
 .btn.round {border-radius: 24px;}
-/*Well MD*/
-body .well.well-sm,
-.container .well.well-sm,
-.container-fluid .well.well-sm {
-  padding: 10px;
-}
-body .well.well-lg,
-.container .well.well-lg,
-.container-fluid .well.well-lg {
-  padding: 26px;
-}
-body .well,
-.container .well,
-.container-fluid .well,
-body .jumbotron,
-.container .jumbotron,
-.container-fluid .jumbotron {
-  background-color: #fff;
-  padding: 19px;
-  margin-bottom: 20px;
-  box-shadow: 0 8px 17px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-  border-radius: 2px;
-  border: 0;
-}
-body .well p,
-.container .well p,
-.container-fluid .well p,
-body .jumbotron p,
-.container .jumbotron p,
-.container-fluid .jumbotron p {
-  font-weight: 300;
-}
+
 /*front-page.php covers*/
-.bg-cover{background-image:no-repeat center fixed;-webkit-background-size: cover;-moz-background-size: cover;-o-background-size: cover;background-size: cover;}
+.outCover{width: 100%;padding: 0;display: table;margin: 0;max-width: none;height: 100vh;}
+.inCover{background-image:no-repeat center fixed;-webkit-background-size: cover;-moz-background-size: cover;-o-background-size: cover;background-size: cover;}
 .coverOne{background-image:url("http://placehold.it/500x500");}/*{background-image:url("/qkty/wp-content/themes/losela/images/flying-high-you-know-how-it-feels.jpg");}*/
 .coverTwo{background-image:url("http://placehold.it/500x500");}
 .coverThree{background-image:url("http://placehold.it/500x500");}
@@ -166,14 +137,6 @@ body .jumbotron p,
 .coverFive{background-image:url("http://placehold.it/500x500");}
 .coverSix{background-image:url("http://placehold.it/500x500");}
 .coverSeven{background-image:url("http://placehold.it/500x500");}
-section {
-  width: 100%;
-  padding: 0;
-  display: table;
-  margin: 0;
-  max-width: none;
-  height: 100vh;
-}
 /*page-about.php hover highlights*/
 figure{
 	overflow: hidden;
@@ -182,7 +145,7 @@ figure{
 	width:100%;
 }
 figcaption{
-	background: rgba(255,255,255,0.5);
+	background: rgba(255,255,255,0.87);
 	color: white;
 	display: table;
 	height: 100%;
@@ -198,8 +161,8 @@ figcaption div{
 	position: relative;
 	width:90%;
 	margin:0 auto;
-	left:0;
 	top:40%;
+	left:0;
 }
 figcaption div span{
 	white-space:pre-line;
