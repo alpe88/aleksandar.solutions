@@ -3,9 +3,10 @@
 
 <!-- Content Begins Here -->
 <!-- Main Content Section Begins Here -->
-<div class="outCover">
-	<?php echo add_highlights_slider(); ?>
-</div>
+
+	<?php echo alt_highlight_slider(); ?>
+
+
 
 
 <div class="container-fluid nopadding">

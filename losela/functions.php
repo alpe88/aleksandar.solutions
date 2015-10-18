@@ -182,13 +182,18 @@ function alt_highlight_slider(){
 	$htmlstr = '';
 	if($ofp->have_posts()){
 		$htmlstr .= '<div id="highlights" class="carousel slide">';
+			$htmlstr .= '<ol class="carousel-indicators">';		
+				while($ofp->have_posts()):$ofp->the_post();
+				$htmlstr .= '<li data-target="#highlights" data-slide-to='.$highlights_number++.'></li>';
+				endwhile;
+			$htmlstr .= '</ol>';
 			
 			$htmlstr .= '<div class="carousel-inner">';
 				while($ofp->have_posts()):$ofp->the_post();
 					$htmlstr .= '<div class="item">';
 						$url = wp_get_attachment_image_src(get_post_thumbnail_id(get_the_ID()), 'full', true);
 						$htmlstr .= '<div class="fill" style="background-image:url('.$url[0].')"></div>';
-							$htmlstr .=	'<div class="hs-caption">';
+							$htmlstr .=	'<div class="carousel-caption">';
 								$htmlstr .= '<h3>'.get_the_title($ofp->ID).'</h3>';
 								$htmlstr .= '<p>'.get_the_excerpt($ofp->ID).'</p>';
 							$htmlstr .= '</div>';

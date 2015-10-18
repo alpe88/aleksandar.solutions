@@ -151,6 +151,8 @@ ul{list-style-type: none;}
     -o-background-size: cover;
 }
 .hs-caption{position:absolute;left:0%;bottom:35%;background:#fff; /* whatever you want */    z-index:1;padding:5px;}
+.carousel-caption{opacity:0.3;background-color:#ccc;}
+.carousel-caption:hover{opacity:1;}
 /*page-about.php hover highlights*/
 figure{
 	overflow: hidden;
