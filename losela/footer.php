@@ -46,16 +46,17 @@
 	<script src="<?php bloginfo('template_directory');?>/js/smooth-scroll.js"></script>							
 	<!-- Twitter Fetcher
 	<script src="<?php bloginfo('template_directory');?>/tw/tf.min.js"></script> -->
-	<!-- Flexslider -->
-	<script src="<?php bloginfo('template_directory');?>/flexslider/jquery.flexslider-min.js"></script>
+	<!-- Flexslider 
+	<script src="<?php bloginfo('template_directory');?>/flexslider/jquery.flexslider-min.js"></script> -->
   	<script type="text/javascript">
 		$(document).ready(function() {
 			new WOW().init();
-			$('.flexslider').flexslider({
+			/*$('.flexslider').flexslider({
 				animation: "slide",
 				controlNav: false,
 				directionNav: false
 			});
+			*/
 		});	
 	</script>
 <?php wp_footer(); ?>

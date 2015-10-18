@@ -128,15 +128,29 @@ ul{list-style-type: none;}
 .btn.round {border-radius: 24px;}
 
 /*front-page.php covers*/
-.outCover{width: 100%;padding: 0;display: table;margin: 0;max-width: none;height: 100vh;}
-.inCover{background-image:no-repeat center fixed;-webkit-background-size: cover;-moz-background-size: cover;-o-background-size: cover;background-size: cover;}
-.coverOne{background-image:url("http://placehold.it/500x500");}/*{background-image:url("/qkty/wp-content/themes/losela/images/flying-high-you-know-how-it-feels.jpg");}*/
-.coverTwo{background-image:url("http://placehold.it/500x500");}
-.coverThree{background-image:url("http://placehold.it/500x500");}
-.coverFour{background-image:url("http://placehold.it/500x500");}
-.coverFive{background-image:url("http://placehold.it/500x500");}
-.coverSix{background-image:url("http://placehold.it/500x500");}
-.coverSeven{background-image:url("http://placehold.it/500x500");}
+.carousel,
+.item,
+.active {
+    height: 100%;
+}
+
+.carousel-inner {
+    height: 100%;
+}
+
+/* Background images are set within the HTML using inline CSS, not here */
+
+.fill {
+    width: 100%;
+    height: 100%;
+	height:100vh;
+    background-position: center;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    background-size: cover;
+    -o-background-size: cover;
+}
+.hs-caption{position:absolute;left:0%;bottom:35%;background:#fff; /* whatever you want */    z-index:1;padding:5px;}
 /*page-about.php hover highlights*/
 figure{
 	overflow: hidden;

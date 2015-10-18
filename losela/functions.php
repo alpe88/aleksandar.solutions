@@ -182,30 +182,20 @@ function alt_highlight_slider(){
 	$htmlstr = '';
 	if($ofp->have_posts()){
 		$htmlstr .= '<div id="highlights" class="carousel slide">';
-			$htmlstr .= '<ol class="carousel-indicators">';		
-				while($ofp->have_posts()):$ofp->the_post();
-				$htmlstr .= '<li data-target="#highlights" data-slide-to='.$highlights_number++.'></li>';
-				endwhile;
-			$htmlstr .= '</ol>';
 			
 			$htmlstr .= '<div class="carousel-inner">';
 				while($ofp->have_posts()):$ofp->the_post();
 					$htmlstr .= '<div class="item">';
 						$url = wp_get_attachment_image_src(get_post_thumbnail_id(get_the_ID()), 'full', true);
 						$htmlstr .= '<div class="fill" style="background-image:url('.$url[0].')"></div>';
-							$htmlstr .=	'<div class="carousel-caption">';
+							$htmlstr .=	'<div class="hs-caption">';
 								$htmlstr .= '<h3>'.get_the_title($ofp->ID).'</h3>';
 								$htmlstr .= '<p>'.get_the_excerpt($ofp->ID).'</p>';
 							$htmlstr .= '</div>';
 					$htmlstr .= '</div>';
 				endwhile;
 			$htmlstr .= '</div>';
-			$htmlstr .= '<a class="carousel-control left" href="#highlights" data-slide="prev">';
-				$htmlstr .= '<span class="icon-prev"></span>';
-			$htmlstr .=	'</a>';
-			$htmlstr .= '<a class="carousel-control right" href="#highlights" data-slide="next">';
-				$htmlstr .= '<span class="icon-next"></span>';
-			$htmlstr .= '</a>';
+			
 		$htmlstr .= '</div>';
 	}
 	else{
