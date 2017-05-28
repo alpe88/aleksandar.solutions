@@ -18,20 +18,13 @@
 	 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=yes" /> 
 
 	<!-- Begin Style Sheets -->
-	<link rel="stylesheet" href="<?php bloginfo('template_directory');?>/style.css" type="text/css">
 	<link rel="stylesheet" href="<?php bloginfo('template_directory');?>/css/losela.min.css" type="text/css" media="screen">
 	<link rel="stylesheet" href="<?php bloginfo('template_directory');?>/css/bs.sharp.css" type="text/css" media="screen">
+	<link rel="stylesheet" href="<?php bloginfo('template_directory');?>/style.css" type="text/css">
 	<!-- Flexslider -->
-	<link rel="stylesheet" href="<?php bloginfo('template_directory');?>/flexslider/flexslider.css" type="text/css">
-	<!-- Material Design 
-	<link rel="stylesheet" href="<?php bloginfo('template_directory');?>/md/css/ripples.min.css" type="text/css">
-	<link rel="stylesheet" href="<?php bloginfo('template_directory');?>/md/css/material-fullpalette.min.css" type="text/css">
-	<link rel="stylesheet" href="<?php bloginfo('template_directory');?>/md/css/material.min.css" type="text/css">-->
 	<!-- Animate -->
 	<link rel="stylesheet" href="<?php bloginfo('template_directory');?>/css/animate.css" type="text/css">
 	<!-- Icons -->
-	<link rel="stylesheet" href="<?php bloginfo('template_directory');?>/icons/fp/fpi.css" type="text/css">
-	<link rel="stylesheet" href="<?php bloginfo('template_directory');?>/icons/im/imi.css" type="text/css">
 	<!-- Google Font -->
 	<link href='http://fonts.googleapis.com/css?family=Playfair+Display|Lobster' rel='stylesheet' type='text/css'>
 	
@@ -45,7 +38,7 @@
 	<!-- Body Begins Here -->
 	<body <?php body_class(''); ?> >		
 	<?php if ( is_admin_bar_showing() ) echo ''; ?>
-
+	<header>
 		<nav id="nav_wrap" class="navbar navbar-default navbar-fixed-top navbar-transparent" role="navigation">
 			<div class="container">
 				<div class="row">
@@ -82,4 +75,4 @@
 			</div>	
 		</nav>
 		
-		
+	</header>
