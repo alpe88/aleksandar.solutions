@@ -10,8 +10,6 @@ Version: 1.0
 */
 #custom walker include
 require_once('BS_Walker.php');
-#custom breadcrumbs include
-require_once('BS_Breadcrumbs.php');
 #theme support additions
 add_theme_support('post-thumbnails');
 add_theme_support( 'html5', array( 'comment-list', 'comment-form', 'search-form', 'gallery', 'caption' ) );
