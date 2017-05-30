@@ -2,15 +2,9 @@
 <!-- Header Ends Here -->
 
 <!-- Content Begins Here -->
-<!-- Main Content Section Begins Here -->
 
-	<?php echo alt_highlight_slider(); ?>
-
-
-
-
-<div class="container-fluid nopadding">
-	<div class="row-fluid nopadding">
+<div class="container">
+	<div class="row">
 		<?php
 			$abt_args = array('pagename' => 'about');
 			$p = new WP_Query($abt_args);
@@ -25,7 +19,7 @@
 		</div>
 	</div>
 </div>
-<!-- Main Content Section Ends Here -->
+
 <!-- Content Ends Here -->
 <!-- Footer Begins Here -->
 <?php get_footer(); ?>

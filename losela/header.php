@@ -21,7 +21,6 @@
 	<link rel="stylesheet" href="<?php bloginfo('template_directory');?>/css/losela.min.css" type="text/css" media="screen">
 	<link rel="stylesheet" href="<?php bloginfo('template_directory');?>/css/bs.sharp.css" type="text/css" media="screen">
 	<link rel="stylesheet" href="<?php bloginfo('template_directory');?>/style.css" type="text/css">
-	<!-- Flexslider -->
 	<!-- Animate -->
 	<link rel="stylesheet" href="<?php bloginfo('template_directory');?>/css/animate.css" type="text/css">
 	<!-- Icons -->
@@ -42,18 +41,17 @@
 		<nav id="nav_wrap" class="navbar navbar-default navbar-fixed-top navbar-transparent" role="navigation">
 			<div class="container">
 				<div class="row">
+					<div class="col-xs-12">
 						<div class="navbar-header">
-							<button class="navbar-toggle" type="button" data-toggle="collapse" data-target=".navbar-main" >
-									<span class="sr-only">Toggle navigation</span>
-									<i class="icon icon-menu"></i>
-							</button>
-							<a href="<?php echo home_url(); ?>">
-									<h1 id="logo" class="alesol-brand lobster m-l nomargin-bottom m-t" style="font-size:30px!important;">aLeksandar.Solutions</h1>
-							</a>
+								<h1 id="logo" class="navbar-brand"><a href="<?php echo home_url(); ?>">aLeksandar.Solutions</a></h1>
 						</div>
-						<div id="main-menu" class="navbar-collapse collapse navbar-main navbar-right uppercase">
-									<ul class="nav navbar-nav">
-									<?php wp_nav_menu(
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-xs-12">
+						<div id="main-menu" class="navbar-collapse collapse navbar-main uppercase">
+							<ul class="nav navbar-nav">
+								<?php wp_nav_menu(
 										array( 
 											'theme_location' => 'main_menu',
 											'menu'           => 'Main Menu',
@@ -67,12 +65,11 @@
 											'fallback_cb'	 => '',
 											'walker'         => new DD_Walker(),
 											));
-									?>
-									</ul>
+								?>
+							</ul>
 						</div>
 					</div>
 				</div>
-			</div>	
+			</div>
 		</nav>
-		
 	</header>
