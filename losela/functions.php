@@ -8,8 +8,11 @@ Text Domain: Aleksandar.Solutions
 Description: This is a theme I developed for aleksandar.solutions 
 Version: 1.0
 */
+/* INCLUDES */
 #custom walker include
 require_once('BS_Walker.php');
+
+
 #theme support additions
 add_theme_support('post-thumbnails');
 add_theme_support( 'html5', array( 'comment-list', 'comment-form', 'search-form', 'gallery', 'caption' ) );
@@ -117,11 +120,15 @@ function custom_excerpt_length( $length ) {
 }
 add_filter( 'excerpt_length', 'custom_excerpt_length', 999 );
 
-function remove_excerpt_more( $more ) {
-	return '';
+function change_excerpt_more( $more ) {
+	return '<a class="more-link" href="' . get_permalink() . '"><p>Read More</p><span class="dashicons dashicons-arrow-right-alt2"></span></a>';
 }
-add_filter('excerpt_more', 'remove_excerpt_more');
+add_filter('excerpt_more', 'change_excerpt_more');
 
+function modify_read_more_link() {
+    return '<a class="more-link" href="' . get_permalink() . '"><span class="dashicons dashicons-arrow-right-alt2"></span></a>';
+}
+add_filter( 'the_content_more_link', 'modify_read_more_link' );
 
 #custom tag cloud tool tip function
 function custom_tooltip_callback($count){
@@ -247,9 +254,13 @@ add_action('wp_logout','admin_bar_logout_redirect');
 #END LOGIN*/
 
 #SEO Titling:
-function SEO_title(){
+function SEO_title($location){
 	global $post;
 
+	if (!isset($location)){
+		$location = 'Seattle, WA';
+	}
+	
 	if(is_front_page()){
 		echo bloginfo('description');
 	}
@@ -272,25 +283,23 @@ function SEO_title(){
 	echo ' | ';
 	echo bloginfo('name');
 	echo ' | ';
-	echo 'Seattle, WA';
+	echo $location;
 }
 
 #SEO Keywords
 function get_keywords(){
 	global $post;
 	$posttags = get_the_tags($post->ID);
+	$category = get_the_category($post->ID);
+	$keyword_list = $category[0]->cat_name;
 	if ($posttags) {
   		foreach($posttags as $tag) {
-    			echo $tag->name . ','; 
+    			$comma = ', ';
+				$keyword_list .= $comma;
+				$keyword_list .= $tag->name;
   		}
-	}else{
-			echo 'Tutorials, Web, Development, Design, ';
-		}
-	
-	$category = get_the_category($post->ID);
-	echo $category[0]->cat_name . ',';
-	echo bloginfo('name') . ',';
-	echo the_title();
+	}
+	echo $keyword_list;
 }
 
 #display tags desc
@@ -300,23 +309,6 @@ function fetch_tags(){
 	$tags = wp_get_post_tags($post->ID, array('orderby' => 'name', 'order' => 'DESC'));
 	foreach($tags as $tag){
 		echo '<a class="p-small" href="' . get_tag_link( $tag->ID ) . '">' . esc_html( $tag->name ) . '</a>';
-	}
-}
-
-#custom function for sidebar display
-function display_sidebar(){
-$isMobile = (bool)preg_match('#\b(ip(hone|od|ad)|android|opera m(ob|in)i|windows (phone|ce)|blackberry|tablet'.
-                    '|s(ymbian|eries60|amsung)|p(laybook|alm|rofile/midp|laystation portable)|nokia|fennec|htc[\-_]'.
-                    '|mobile|up\.browser|[1-4][0-9]{2}x[1-4][0-9]{2})\b#i', $_SERVER['HTTP_USER_AGENT'] );
-	if(is_front_page() && is_home()){#Default homepage - sidebar displayed
-		echo "hidden-xs hidden-sm hidden-md hidden-lg";
-	}elseif (is_front_page()) {#static homepage - sidebar displayed (probably not needed, but better to be complete)
-		echo "hidden-xs hidden-sm hidden-md hidden-lg";
-	}elseif (is_home()) {#blog page - sidebar displayed
-		echo "col-xs-12 col-sm-4";
-	}else{#everything else
-		if(is_page('Blog')){echo "hidden-xs hidden-sm hidden-md hidden-lg";}
-		else{echo "hidden-xs hidden-sm hidden-md hidden-lg";}
 	}
 }
 
