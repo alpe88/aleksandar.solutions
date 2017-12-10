@@ -19,7 +19,7 @@
 							'menu_class'     => '',
 							'items_wrap'     => '%3$s',
 							'fallback_cb'	 => '',
-							'walker'         => new DD_Walker(),
+							'walker'         => new BS_Walker(),
 							));
 						?>
 						<li>
@@ -38,7 +38,6 @@
 </div>
 </footer>
 	<!-- Begin Scripts -->
-	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
    	<script src="<?php bloginfo('template_directory');?>/bs/js/bootstrap.min.js"></script>
 	<!-- Smooth Scrolling -->
 	<script src="<?php bloginfo('template_directory');?>/js/navbar-scroll.js"></script>

@@ -61,7 +61,7 @@
 											'menu_class'     => '',
 											'items_wrap'     => '%3$s',
 											'fallback_cb'	 => '',
-											'walker'         => new DD_Walker(),
+											'walker'         => new BS_Walker(),
 											));
 								?>
 							</ul>
