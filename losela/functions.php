@@ -22,6 +22,15 @@ require_once('func/seo.php');
 require_once('func/filters.php');
 require_once('func/helpers.php');
 
+/*
+(function($) {
+	
+	// $ Works! You can test it with next line if you like
+	// console.log($);
+	
+})( jQuery );
+*/
+
 /*DON'T LOOK DOWN!*/
 #BROWSER DETECTION
 function mobileDetection(){

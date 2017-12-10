@@ -35,6 +35,7 @@ function add_highlights_slider() {
 	return $htmlstr;
 }
 
+/*
 #another slider using native BS3
 function alt_highlight_slider(){
 	$highlights_number = 0;
@@ -91,4 +92,4 @@ jQuery(document).ready(function($){
 </script>
 <?php
 }
-add_action('wp_footer', 'highlightsJs');
+add_action('wp_footer', 'highlightsJs');*/

@@ -16,12 +16,7 @@
 	 <meta http-equiv="Pragma" content="no-cache" > 
 	 <meta http-equiv="Expires" content="-1" > 
 	 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" > 
-
-	<!-- Begin Style Sheets -->
-	<link rel="stylesheet" href="<?php bloginfo('template_directory');?>/bs/css/bootstrap.min.css" type="text/css" media="screen">
-	<link rel="stylesheet" href="<?php bloginfo('template_directory');?>/bs/css/bs.sharp.css" type="text/css" media="screen">
-	<link rel="stylesheet" href="<?php bloginfo('template_directory');?>/bs/css/bs.fh.css" type="text/css" media="screen">
-	<link rel="stylesheet" href="<?php bloginfo('template_directory');?>/style.css" type="text/css">
+	 
 	<!-- Google Font -->
 	<link href='http://fonts.googleapis.com/css?family=Playfair+Display|Lobster' rel='stylesheet' type='text/css'>
 	

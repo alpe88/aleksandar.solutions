@@ -37,17 +37,7 @@
 	</div>
 </div>
 </footer>
-	<!-- Begin Scripts -->
-   	<script src="<?php bloginfo('template_directory');?>/bs/js/bootstrap.min.js"></script>
-	<!-- Smooth Scrolling -->
-	<script src="<?php bloginfo('template_directory');?>/js/navbar-scroll.js"></script>
-	<script src="<?php bloginfo('template_directory');?>/js/smooth-scroll.js"></script>							
-
-  	<script type="text/javascript">
-		$(document).ready(function() {
-
-		});	
-	</script>
+					
 <?php wp_footer(); ?>
 <!-- Footer Ends Here -->
 </body>
